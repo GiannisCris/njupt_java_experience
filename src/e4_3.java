@@ -1,4 +1,5 @@
 public class e4_3 {
+
     //多线程
     static class Thread implements Runnable {
         private int start,end;
@@ -26,13 +27,11 @@ public class e4_3 {
         }
     }
 
-
     public static void main(String[] args) {
         new java.lang.Thread(new Thread(2, 100000), "thread1").start();
         new java.lang.Thread(new Thread(100000, 200000), "thread2").start();
 
     }
-
 
     //判断质数
     static boolean isPrimeNumber(int num){
