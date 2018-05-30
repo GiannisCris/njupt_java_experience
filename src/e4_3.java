@@ -1,5 +1,6 @@
 public class e4_3 {
-
+    //i love zhangyan
+    //作者Chris Tree
     //多线程
     static class Thread implements Runnable {
         private int start,end;
@@ -44,5 +45,4 @@ public class e4_3 {
         }
         return true;
     }
-    //i love zhangyan
 }
