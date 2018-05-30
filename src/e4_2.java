@@ -89,6 +89,8 @@ public class e4_2 {
 
             }
         });
+
+        // set frame
         int frameWidth = 400;
         int frameHeight = 400;
         Dimension screenSize =
