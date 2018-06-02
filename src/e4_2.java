@@ -1,16 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class e4_2 {
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                constructGUI();
-            }
-        });
+        SwingUtilities.invokeLater(e4_2::constructGUI);
     }
 
     private static void constructGUI() {
@@ -34,29 +27,19 @@ public class e4_2 {
         //add exit actionlistener
         JMenuItem operationExitMI = new JMenuItem("Exit");
         operationMenu.add(operationExitMI);
-        operationExitMI.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        operationExitMI.addActionListener(e -> System.exit(0));
 
         // add information actionlistener
         JMenuItem helpInformationMI = new JMenuItem("Information");
         helpMenu.add(helpInformationMI);
-        helpInformationMI.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showOptionDialog(null,
-                        "program name:  caculator \n"
-                                + "information :  trash\n"
-                                + " created by  :  ChrisTree\n"
-                                +"\n"
-                                +"fuck the world\n"+"i love zhangyan forever\n",
-                        "caculator information", JOptionPane.DEFAULT_OPTION,
-                        JOptionPane.INFORMATION_MESSAGE, null, null, null);
-            }
-        });
+        helpInformationMI.addActionListener(e -> JOptionPane.showOptionDialog(null,
+                "program name:  caculator \n"
+                        + "information :  trash\n"
+                        + " created by  :  ChrisTree\n"
+                        +"\n"
+                        +"fuck the world\n"+"i love zhangyan forever\n",
+                "caculator information", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE, null, null, null));
 
         //set menubar
         frame.setJMenuBar(jMenuBar);
@@ -77,17 +60,14 @@ public class e4_2 {
         //add abutton
         JButton jButton = new JButton("计算");
         frame.add(jButton);
-        jButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int a = Integer.parseInt(jTextField1.getText());
-                int b = Integer.parseInt(jTextField2.getText());
-                jTextArea.append("a + b = " + String.valueOf(a + b)+"\n");
-                jTextArea.append("a - b = " + String.valueOf(a - b)+"\n");
-                jTextArea.append("a * b = " + String.valueOf(a * b)+"\n");
-                jTextArea.append("a / b = " + String.valueOf(a / b)+"\n");
+        jButton.addActionListener(e -> {
+            int a = Integer.parseInt(jTextField1.getText());
+            int b = Integer.parseInt(jTextField2.getText());
+            jTextArea.append("a + b = " + String.valueOf(a + b)+"\n");
+            jTextArea.append("a - b = " + String.valueOf(a - b)+"\n");
+            jTextArea.append("a * b = " + String.valueOf(a * b)+"\n");
+            jTextArea.append("a / b = " + String.valueOf(a / b)+"\n");
 
-            }
         });
 
         // set frame
@@ -99,3 +79,4 @@ public class e4_2 {
         frame.setVisible(true);
     }
 }
+
