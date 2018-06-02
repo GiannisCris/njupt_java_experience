@@ -1,21 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.image.Kernel;
-import java.text.DecimalFormat;
 
 public class e4_1 {
 
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                caculateGUI();
-            }
-        });
+        SwingUtilities.invokeLater(e4_1::caculateGUI);
     }
     private static void caculateGUI(){
         JFrame.setDefaultLookAndFeelDecorated(true);
@@ -35,29 +25,19 @@ public class e4_1 {
         //add exit actionlistener
         JMenuItem operationExitMI = new JMenuItem("Exit");
         operationMenu.add(operationExitMI);
-        operationExitMI.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
+        operationExitMI.addActionListener(e -> System.exit(0));
 
         // add information actionlistener
         JMenuItem helpInformationMI = new JMenuItem("Information");
         helpMenu.add(helpInformationMI);
-        helpInformationMI.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showOptionDialog(null,
-                          "program name:  caculator \n"
-                                 + "information :  trash\n"
-                                + " created by  :  ChrisTree\n"
-                                  +"\n"
-                                +"fuck the world\n"+"i love zhangyan forever\n",
-                        "caculator information", JOptionPane.DEFAULT_OPTION,
-                        JOptionPane.INFORMATION_MESSAGE, null, null, null);
-            }
-        });
+        helpInformationMI.addActionListener(e -> JOptionPane.showOptionDialog(null,
+                  "program name:  caculator \n"
+                         + "information :  trash\n"
+                        + " created by  :  ChrisTree\n"
+                          +"\n"
+                        +"fuck the world\n"+"i love zhangyan forever\n",
+                "caculator information", JOptionPane.DEFAULT_OPTION,
+                JOptionPane.INFORMATION_MESSAGE, null, null, null));
 
         //set menubar
         frame.setJMenuBar(jMenuBar);
@@ -91,43 +71,31 @@ public class e4_1 {
 
         //buttonActions
         frame.add(jButton1);
-        jButton1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int a = Integer.parseInt(textField1.getText());
-                int b = Integer.parseInt(textField2.getText());
-                jTextArea.setText(Integer.toString(a+b));
-            }
+        jButton1.addActionListener(e -> {
+            int a = Integer.parseInt(textField1.getText());
+            int b = Integer.parseInt(textField2.getText());
+            jTextArea.setText(Integer.toString(a+b));
         });
 
         frame.add(jButton2);
-        jButton2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int a = Integer.parseInt(textField1.getText());
-                int b = Integer.parseInt(textField2.getText());
-                jTextArea.setText(Integer.toString(a-b));
-            }
+        jButton2.addActionListener(e -> {
+            int a = Integer.parseInt(textField1.getText());
+            int b = Integer.parseInt(textField2.getText());
+            jTextArea.setText(Integer.toString(a-b));
         });
 
         frame.add(jButton3);
-        jButton3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int a = Integer.parseInt(textField1.getText());
-                int b = Integer.parseInt(textField2.getText());
-                jTextArea.setText(Integer.toString(a*b));
-            }
+        jButton3.addActionListener(e -> {
+            int a = Integer.parseInt(textField1.getText());
+            int b = Integer.parseInt(textField2.getText());
+            jTextArea.setText(Integer.toString(a*b));
         });
 
         frame.add(jButton4);
-        jButton4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                double a = Double.parseDouble(textField1.getText());
-                double b = Double.parseDouble(textField2.getText());
-                jTextArea.setText(Double.toString(a/b));
-            }
+        jButton4.addActionListener(e -> {
+            double a = Double.parseDouble(textField1.getText());
+            double b = Double.parseDouble(textField2.getText());
+            jTextArea.setText(Double.toString(a/b));
         });
 
         int frameWidth = 400;
