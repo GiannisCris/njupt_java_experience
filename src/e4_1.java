@@ -7,6 +7,7 @@ public class e4_1 {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(e4_1::caculateGUI);
     }
+
     private static void caculateGUI(){
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame();
@@ -22,12 +23,12 @@ public class e4_1 {
         jMenuBar.add(operationMenu);
         jMenuBar.add(helpMenu);
 
-        //add exit actionlistener
+        //add operationMenu Exit actionlistener
         JMenuItem operationExitMI = new JMenuItem("Exit");
         operationMenu.add(operationExitMI);
         operationExitMI.addActionListener(e -> System.exit(0));
 
-        // add information actionlistener
+        // add operationMenu Information actionlistener
         JMenuItem helpInformationMI = new JMenuItem("Information");
         helpMenu.add(helpInformationMI);
         helpInformationMI.addActionListener(e -> JOptionPane.showOptionDialog(null,
@@ -98,14 +99,13 @@ public class e4_1 {
             jTextArea.setText(Double.toString(a/b));
         });
 
+        //set frame size
         int frameWidth = 400;
         int frameHeight = 800;
         Dimension screenSize =
                 Toolkit.getDefaultToolkit().getScreenSize();
         frame.setBounds((int)screenSize.getWidth() - frameWidth,0,frameWidth,frameHeight);
         frame.setVisible(true);
-
     }
-
 }
 
