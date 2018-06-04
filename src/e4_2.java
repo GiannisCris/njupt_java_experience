@@ -24,12 +24,12 @@ public class e4_2 {
         jMenuBar.add(operationMenu);
         jMenuBar.add(helpMenu);
 
-        //add exit actionlistener
+        //add operationMenu Exit actionlistener
         JMenuItem operationExitMI = new JMenuItem("Exit");
         operationMenu.add(operationExitMI);
         operationExitMI.addActionListener(e -> System.exit(0));
 
-        // add information actionlistener
+        // add operationMenu Information actionlistener
         JMenuItem helpInformationMI = new JMenuItem("Information");
         helpMenu.add(helpInformationMI);
         helpInformationMI.addActionListener(e -> JOptionPane.showOptionDialog(null,
@@ -70,7 +70,7 @@ public class e4_2 {
 
         });
 
-        // set frame
+        // set frame size
         int frameWidth = 400;
         int frameHeight = 400;
         Dimension screenSize =
