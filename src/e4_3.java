@@ -13,7 +13,7 @@ public class e4_3 {
         //重写run函数
         @Override
         public void run() {
-            int n = 0;
+            int n = 0;//计数n
             for (int i = start; i< end; i++) {
                 if (isPrimeNumber(i)) {
                     System.out.print(i + "\t");
