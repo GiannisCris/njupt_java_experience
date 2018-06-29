@@ -96,6 +96,19 @@ class Student {
         return desc;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 class CollegeStudent extends Student{
     private String profession;
     public CollegeStudent(String stuNo, String classNo, String name, char sex, int age,String profession){
@@ -117,6 +130,22 @@ class CollegeStudent extends Student{
         return super.toString()+ desc;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public class e2_4 {
     public static void main(String[] args) {
         Student s1 = new Student("11111", "1", "Tom", 'F', 20);
