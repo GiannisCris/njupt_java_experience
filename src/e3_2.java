@@ -5,6 +5,7 @@ abstract class Person{
     }
     abstract int pay();
 }
+
 class Assistant extends Person{
     public Assistant(int lessons){
         super(lessons);
@@ -15,6 +16,7 @@ class Assistant extends Person{
         return(basicincome+lessons*lessonsincome);
     }
 }
+
 class Instructor extends Person{
     public Instructor(int lessons){
         super(lessons);
