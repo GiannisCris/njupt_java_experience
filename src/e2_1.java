@@ -1,5 +1,5 @@
 public class e2_1 {
-    public static boolean IsPlalindrome(int n){
+    private static boolean IsPlalindrome(int n){
         int i=n ;
         int m=0 ;
         while(i != 0)
